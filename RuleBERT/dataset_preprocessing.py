@@ -17,7 +17,7 @@ def return_torch_datasets(data_dir,include_first,use_ruletext,model_arch,max_len
         val_file = data_dir + 'val.jsonl'
     rule_lambda=dict()
 
-    val_theories = [json.loads(jline) for jline in open(val_file, "r").read().splitlines()][:300]
+    val_theories = [json.loads(jline) for jline in open(val_file, "r").read().splitlines()]
     if use_ruletext:
         val_context = [t['context'] for t in val_theories]
     else:

@@ -19,15 +19,6 @@ def flat_accuracy(preds, labels):
     pred_flat = np.argmax(preds, axis=1).flatten()
     labels_flat = labels.flatten()
     return np.sum(pred_flat == labels_flat) / len(labels_flat)
-
-def confidence_accuracy(logits, labels, weights, threshold=0.05, verbose=False):
-    probs = softmax(logits, axis=1)
-    pred_weights = np.array([x[1].item() for x in probs])
-    abs_diff = np.abs(pred_weights - weights.cpu().numpy())
-    if not verbose:
-        return np.sum(abs_diff < threshold) / len(abs_diff)
-    else:
-        return probs, abs_diff
     
 def make_relation_to_str(x1,x2,x3):
     if x1[:3]=="neg":
