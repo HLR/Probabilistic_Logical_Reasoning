@@ -20,7 +20,7 @@ We utilized RuleBERT and our new RuleTaker-pro datasets, focusing on probabilist
 
 - [RuleBERT Code](https://github.com/HLR/Probabilistic_Logical_Reasoning/tree/main/RuleBERT) Source code for implementing PCT In RuleBERT. 
 - [RuleTaker-pro Code](https://github.com/HLR/Probabilistic_Logical_Reasoning/tree/main/RuleTaker-pro) Source code for implementing PCT In RuleTaker-pro.
-- [RuleTaker-pro Dataset](https://github.com/HLR/Probabilistic_Logical_Reasoning/tree/main/RuleTaker-pro)  RuleTaker-pro dataset files.
+- [RuleTaker-pro Dataset](https://github.com/HLR/Probabilistic_Logical_Reasoning/tree/main/RuleTaker-pro/Dataset/)  RuleTaker-pro dataset files.
 
 ## Getting Started
 
