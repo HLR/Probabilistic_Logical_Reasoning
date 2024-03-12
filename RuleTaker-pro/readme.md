@@ -36,7 +36,7 @@ To train the baseline RuleTaker-pro use these parameters:
 To train RuleTaker-pro with PCT use these parameters:
 ```
 !cd RuleTaker-pro
-python train.py --batch_size 16 --cur_epoch 4 --lr 1e-5 --losstype SimpleCE --adverb --race --race --alpha 0.01
+!python train.py --batch_size 16 --cur_epoch 4 --lr 1e-5 --losstype SimpleCE --adverb --race --race --alpha 0.01
 ```
 
 You can customize the training process using various command line arguments:
