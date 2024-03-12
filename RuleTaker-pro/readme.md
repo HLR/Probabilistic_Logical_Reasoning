@@ -3,9 +3,6 @@
 
 Welcome to the RuleTaker-pro training repository. This README provides a guide on how to set up and use the repository for training the RuleTaker-pro models.
 
-## Prerequisites
-
-
 ## Installation
 
 1. Clone this repository to your local machine using:
