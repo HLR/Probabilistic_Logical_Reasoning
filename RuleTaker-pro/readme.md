@@ -30,10 +30,12 @@ The training script `train.py` is used to train models.
 
 To train the baseline RuleTaker-pro use these parameters:
 ```
-python train.py --batch_size 16 --cur_epoch 4 --lr 1e-5 --losstype SimpleCE --adverb --race
+!cd RuleTaker-pro
+!python train.py --batch_size 16 --cur_epoch 4 --lr 1e-5 --losstype SimpleCE --adverb --race
 ```
 To train RuleTaker-pro with PCT use these parameters:
 ```
+!cd RuleTaker-pro
 python train.py --batch_size 16 --cur_epoch 4 --lr 1e-5 --losstype SimpleCE --adverb --race --race --alpha 0.01
 ```
 
