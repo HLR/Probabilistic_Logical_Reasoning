@@ -18,7 +18,33 @@ def flat_accuracy(preds, labels):
     labels_flat = labels.flatten()
     return np.sum(pred_flat == labels_flat) / len(labels_flat)
 
+def convert_to_adverb(x):
+    if x > 95:
+        return "always", 100
+    if x > 85:
+        return "usually", 90
+    if x > 75:
+        return "normally", 80
+    if x > 60:
+        return "often", 65
+    if x > 40:
+        return "sometimes", 50
+    if x > 20:
+        return "occasionally", 30
+    if x > 7:
+        return "seldom", 15
+    return "never", 0
 
+adverb_replacements = {
+    "always": "with a probability of 100%",
+    "usually": "with a probability of 90%",
+    "normally": "with a probability of 80%",
+    "often": "with a probability of 65%",
+    "sometimes": "with a probability of 50%",
+    "occasionally": "with a probability of 30%",
+    "seldom": "with a probability of 15%",
+    "never": "with a probability of 0%"
+}
 
 def create_main_dataset(split="train",depth=3,batchsize=16, adverb=True):
     seed_everything(42)
@@ -27,6 +53,8 @@ def create_main_dataset(split="train",depth=3,batchsize=16, adverb=True):
     tokenizer = AutoTokenizer.from_pretrained(model_arch)
     dataset=pd.read_csv(f"dataset/d{depth}/{split}-pro.csv")
     input_ids,attention_masks=[],[]
+    if adverb==False:
+        dataset['context'] = dataset['context'].replace(adverb_replacements, regex=True)
     for c, h in tqdm.tqdm(zip(dataset["context"], dataset["question"])):
         encoded = tokenizer.encode_plus(c, h, max_length=384, truncation=True, return_tensors='pt',padding='max_length')
         input_ids.append(encoded['input_ids'])

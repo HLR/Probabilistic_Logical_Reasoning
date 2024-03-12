@@ -1,1 +1,5 @@
-torch
+transformers==4.28.1
+tqdm==4.66.1
+torch==1.12.1
+problog==2.2.4
+numpy==1.24.4
